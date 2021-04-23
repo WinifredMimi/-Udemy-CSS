@@ -1,1 +1,121 @@
+重點只要學習實用和常用的就好
+web：css==https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+web；flex==https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
+===
+
+CSS Syntax：
+一：
+h1{
+    Color : green;
+}
+
+二：放置的位置
+1.所有的標籤都可以作變化 (在裡面加入style)
+<p style="color: blueviolet;"></p>
+
+2.在head標籤裡面加入<style></style> 【優秀2】
+裡面就用像 （一、）這樣的語法
+
+3.新增另外一個文件夾（style.css），裡面寫css 【優秀1】
+在原本的文件夾裡面寫<link rel="stylesheet" href="./style.css" / >
+
+三：color styling in css-顏色的設定
+-reserved color（被保留的顏色）：只要打「color：」選擇裡面預設的顏色就好；只有140種類
+-rgb：客製化顏色打「color：rgb（數字，數字，數字）」；有幾千萬種
+-rgba：「color：rgb（數字，數字，數字，數字-透明度）」；
+-hex：=hexadecimal 十六進制（0，1，2。。。9，A。B。C.D.E.F.）；ex：#13AB12（可在hex color裡看）
+
+四：css selector 選擇器
+-universal ： 套用在所有的套件裡面
+*{
+    Color：
+}
+
+-element、id、class：
+1.element：HTML中的標籤
+h1{
+    Color : green;
+}
+
+2.id：只能有一個
+每個<div id="redtext"></div>
+#redtext{
+    Color:red;
+}
+
+3.class=類別：可以有很多個
+每個<h1 class="buleText"></h1>
+.buleText{
+    Color:blue:
+}
+每個<h1 class="buleText largeText"></h1> (可以加入兩個class)
+.largeText{
+    font-size:3rem
+}
+
+-grouping Selector
+h1,h2 {
+     Color:blue ;
+}
+
+-descendant selector（後裔，爸爸小孩）
+div.link1 a{
+    color:red;
+}
+div.link2 a{
+    Color:aqua;
+}
+
+-attribute selecter
+input[type:"text"]{
+    Color:red;
+}
+
+-pseudo-classes (是一個key word，被加到seletor後面就會發生變化) -https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+input[type:"text"]：active（hover、focus）{   （滑鼠按某個區塊就會換紅色、（這個區塊一直是紅色、除非點到下一個顏色，他就會保持紅色））
+    Color:red;
+}
+
+tr：nth-child（2）{
+    color:red;
+}
+
+-pseudo-element(增加東西、統一做改變)以下是常見
+p::before{   （在前面增加了>,顏色是紅色）
+    content:">";
+    color:red;
+}
+
+p：：first-letter{  (第一個字大寫)
+    font-size:2.5rem;
+}
+
+*：：selection{    (選取的時候背景色是綠黃色)
+    background-color:greenyellow
+}
+
+五：規則（鼠標移到那裡就會知道特定度多少）
+-cascade（coding寫在越下面，就會執行下面的，除非遇到下面的情況）
+-sepecificity特定度【1.ID（1，0，0），2.class（0，1，0），3.tag（0，0，1）】
+-inheritance繼承（因為body是h1的爸爸，所以在爸爸裡面都要改成綠色；但如果小孩本身有固定的顏色就不會被繼承）
+body{
+    color：green；
+}
+通用規則：inline styling > id > class > elemen selector > inheritance
+
+六：text styling
+-font-size：（字的大小：數字px -（絕對單位）網頁後台想放大，沒有改變/ 1rem-網頁後台想放大，也跟著變大 ） 
+-text-align：（靠中左右：left、right、center）
+-text-decoration（：裝置：underline；none；line through）
+-line-height：（間距）
+-letter spacing：（每個字母的空間大小）
+-font-family ：（字體；參考==https://www.cssfontstack.com ； google font；）
+-font-weight：(字的粗度：數字 --400預設值)
+-text-index：（每一段的前面空格多大：數字）
+
+七：background
+-background-color：（顏色）
+-background-image：URL（“./”）（從哪裡放照片近來）
+-background-size:(圖片的大小：contain重複；cover放到最大;)
+-background-position（位置：top、left、center、）
