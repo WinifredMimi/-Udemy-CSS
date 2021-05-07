@@ -1,0 +1,54 @@
+===css-2
+一：Box Model
+-content：（內文）不會做設定
+-padding：（內文與外框的中間東西）
+ 快速設定方式：（上數字，右數字，下數字，左數字，）；（上下數字，左右數字）；（上下左右數字）
+-border：（外框）
+ （數字px solid-粗度 red）
+-margin：（外框的外框）
+ 快速做設定：（上數字，右數字，下數字，左數字，）；（上下數字，左右數字）；（上下左右數字）
+-注意：所有的html的element都是box（有width & height）
+ width：（數字vw）；height（數字vh） --當試窗任意放大，它也會跟著放大縮小
+
+二：Relative units
+-% ：width、height（相對於你的parent elemenr的width）
+-vw
+-vh
+
+三：display屬性設定
+-block（h1，div，section。。。）
+width和height可以改變；margin上下左右皆可調整；
+a.survey{    (想要為有超連結的網址做box改變則需要加入display)
+    background-color:aqua;
+    display:block（可以設定寬度和高度）;
+    width:100px;
+    height:500px;
+}
+-inline（a，span。。。）
+ 不能設定width、height；margi只能調整左右
+
+-inline-block（img、input、button、select、textara）；
+ width和height可以改變；；margin上下左右皆可調整
+1.在網頁排版是inlineelement
+2.width、height是符合block element
+
+四：position
+-static（靜態）（預設值）（一般不用）
+-relative（相對）（相對於top，right，bottom，left）
+.box2{
+    position：relative;
+    top:數字px； or right：數字px； or bottom：數字px； or left：數字px；
+    z-index：2；（物件垂直的關係）（除了static、其他都可以）
+}
+-absolute（絕對的）（）（相對於top，right，bottom，left）
+.box2{
+    position：absolute;（）位子是固定的，滑動滑鼠，它依然在原本的位置上
+    top:0；
+    right：0；
+}
+-fixed（固定的）（常用：放在導覽列上）（網頁滑得時候，它也會跟著移動）
+.box2{
+    position：fixed；
+    top； left；width；height
+}
+-sticky（黏住）（常用：導覽列往下會看不到banner，一回到上面有看到banner）
