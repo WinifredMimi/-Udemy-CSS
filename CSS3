@@ -1,0 +1,153 @@
+===css-3
+一：default styling；(可以看3wschool有寫)
+ex：HTML tags（預設的值）
+<h1>font-size: ;font-weight: ; 
+
+二：list styling（ul、li、ol）
+ul{
+    list-style-type: disc(實心)、square（正方形）、circle（圓形）;
+}
+ol{
+    list-style-type: upper-alpha（A——B）、upper-roman（大寫羅馬數字）;
+}
+
+三：table styling（table、tr、th、td）
+table{
+    withd:
+    height:
+}
+table,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th,td{
+    padding: 0.5rem o.75rem;
+}
+
+td:hover{
+    background-color: gray;
+}
+
+四：opacity透明度、cursor滑鼠變其他東西
+h1{
+    opacity: o.5;
+}
+
+.pic{
+    cursor: pointer、wait;
+}
+
+五：transition（轉場）（網頁的動態效果、動畫的速度）（property name、duration、timing funtion）
+沒有轉場：
+h1:hover{
+    background-color: rgba(red, green, blue, alpha);
+    color: royalblue;
+}
+
+有轉場：
+h1{
+    transition: background-color 0.25s  ease-in(一開始比較快以後比較快);
+}
+h1:hover{
+    background-color: rgba(red, green, blue, alpha);
+    color: royalblue;
+}
+
+六：2DTransform（轉變）🌟🌟【比較難】
+-translate()(換位)
+.pic{
+    width: 500px;
+    height: 350px;
+}
+ div.container{
+     width: 500px;
+     height: 500px;
+     background-color:black
+ }
+ div.box{
+     width: 100px;
+     height: 100px;
+     background-color: blanchedalmond;
+     transition: all 1s;
+ }
+
+ div.box:hover{
+     transform:translate(100px,200px)
+     position:absolute;
+     top:50%;
+     left:50%;
+     transform:translate(-50%,-50%)
+ }
+
+-rotate()（旋轉）
+div.box:hover{
+    transform:rotate(-90deg)（滑鼠一上去的時候，它就會旋轉）
+}
+
+-scale()（放大）
+div.box:hover{
+    transform: scale(2,3);(以自己為中心放大)
+}
+
+七：3DTransform
+-rotateX()
+div.box:hover{
+    transform: rotateX(90deg);(沿著X轉)
+}
+
+-rotateY()
+div.box:hover{
+    transform: rotateY(90deg);(沿著Y轉)
+}
+
+-rotateZ()
+div.box:hover{
+    transform: rotateZ(90deg);(沿著水平轉)
+}
+
+八:Animation（動畫）
+.pic{
+    width: 500px;
+    height: 350px;
+}
+ div.container{
+     width: 500px;
+     height: 500px;
+     background-color:black
+ }
+ div.box{
+     width: 100px;
+     height: 100px;
+     background-color: blanchedalmond;
+     animation-name: cross;
+     animation-duration: 2s;
+     position: relative;
+     animation-delay: 3s;(等待3s再移動)
+     animation-iteration-count: 2;（跑2次）
+     animation-iteration-count: infinite;(無限循環)
+     animation-direction:reverse（從反向向進行循環）；alternats（設定的方向是來回來回循環）;
+     animation-timing-function:ease-in;(一開始很快之後慢下來)
+     animation-fill-mode:forwards；(定格再動畫結束的樣子)
+ }
+-快速設置：animation:name duration timing-function delay iteration-count diretion
+ex: animation:cross 1s ease-in;
+
+@keyframes cross(名稱){
+    form{
+        background-color:aqua;
+        top:0;
+        left:0;
+    }
+    to{
+        background-color: brown;
+        top:400px;
+        left: 400px;
+      }
+    }
+
+九：other topics in css
+-border-radius:10px；50% (在box中設定外寬的圓滑度)
+-overflow：hidden（超過某個界線會隱藏）；scroll（超過的部分就會產生滾輪滑動來找到；）
+-float and clear（網頁排版用的）
+
