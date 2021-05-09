@@ -1,0 +1,101 @@
+===進階HTML、CSS -1
+一：HTML5 semantic Tags語意的
+實用：<footer><header><main><nav><section><details>
+
+二：flexbox（跟排版有關係）
+-flex-direction
+-flex item width and flex-wrap 🌟🌟【難】
+flex item width：（no setting for width ，content decides width）（set width，這是最大的值）（flex-wrap來固定位置）
+.pic{
+    width: 500px;
+    height: 350px;
+}
+div.container{
+    border: 3px solid red;
+    display: flex;(左至右排列)
+    flex-direction（方向）: row（左至右排列）； column（上至下）；row-reverse(右至左排列)
+    flex-wrap: warp;（當位置不夠的時候，就自動往下一行放）
+}
+.box{
+    width: 200px;（最大值）
+    height: 00px;
+}
+.box1{
+    background-color: rgb(red, green, blue);
+}
+.box2{
+    background-color: royalblue;
+}
+-flex grow and flex basis
+.box{
+    height: 200px;
+}
+.box1{
+    flex-grow: 1;（當沒有設定width時，成長同樣的倍率）（放大縮小，都會一樣）
+    flex-basis: 150px;（如果小於某個值 就會自動跳下一行）
+    background-color: rgb(red, green, blue);
+}
+.box2{
+    flex-grow: 1;
+    flex-basis: 150px;
+    background-color: royalblue;
+}
+⚠️注意：在flex裡
+1.flex container
+height,no setting(content decisdes )；width no setting
+but=display：flex； flex-wrap：wrap；
+2.flex items：
+width：unit setting & flex grow；
+height：unit setting；
+
+position in flexbox
+-justify-content（跟direction平行的）
+div.container{
+    border: 3px solid red;
+    display: flex;(左至右排列)
+    flex-wrap: warp;（當位置不夠的時候，就自動往下一行放）
+    justify-content：flex-end（水平方向）；center（水平置中）；space-between（每個空格排列）；space-evenly（在有限的位置上平均分配）
+    justify-start：
+}
+
+-align-items（跟direction垂直的）
+div.container{
+    border: 3px solid red;
+    display: flex;(左至右排列)
+    flex-wrap: warp;（當位置不夠的時候，就自動往下一行放）
+    align-items：flex-end（跑到最下面）；
+    align-items：stretch（當沒有設定height，東西就會沾滿整個container）；
+}
+.box{
+    width: 200px; （就會變得超級長，沾滿整個container）
+}
+
+-flex-shrink
+div.container{
+    border: 3px solid red;
+    display: flex;(左至右排列)
+    flex-wrap: warp;（當位置不夠的時候，就自動往下一行放）
+}
+.box{
+    height: 200px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 200px;
+}
+快速設置： flex:1 1 200px；
+
+-flex-grow 計算方式
+.box1{
+    flex:3 1 100px;
+    background-color: rgb(red, green, blue);
+}
+.box2{
+    flex:1 1 100px;
+    background-color: royalblue;
+}
+
+公式：div.container的總體寬度1000px，2個boxes各100px
+flex-grow=1000-100-100=800px；
+
+box1=3 ；最後 800*（3/4）=600px  total width：600+100=700
+box2=1 ；最後 800*（1/4）=200px  total width：200+100=300
